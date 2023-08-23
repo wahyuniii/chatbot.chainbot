@@ -41,7 +41,7 @@ background-size: cover;
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Mulai Title
-st.title("HALO DENGAN CHAINBOT EDIT DISINI :wave:")
+st.title("HALO DENGAN CHAINBOT DISINI :wave:")
 
 def load_lottieurl(url: str):
     r = requests.get(url)
