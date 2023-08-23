@@ -92,121 +92,17 @@ with tab1:
         st.write("Nah setelah kalian mempelajari bahan ajar dan mengamati video pembelajaran tersebut, tentu sekarang kalian sudah paham tentang Rantai makanan dan Jaring-jaring makanan")
         st.write("Untuk mengukur pemahaman kalian, mari kerjakan kuis dengan menekan tombol KUIS TOPIK A pada bagian atas   ⬆⬆⬆")
         
-# KUIS
+#Kuis
 with tab2:
-    def generate_questions():
-        questions = [
-            {
-                'type': 'text',
-                'question': 'Rantai makanan adalah hubungan makan dan dimakan dalam suatu ekosistem sebagai upaya untuk mendapatkan ....',
-                'options': ['A. gaya', 'B. gerak', 'C. energi', 'D. saha'],
-                'answer': 'C. energi'
-            },
-            {
-                'type': 'image',
-                'question': 'Perhatikan gambar rantai makanan berikut!',
-                'image': 'https://imgix2.ruangguru.com/assets/miscellaneous/png_u2vbwu_6032.png',
-                'question': 'Makhluk hidup yang berperan sebagai konsumen tingkat 2 pada rantai makan di bawah ini yaitu ....',
-                'options': ['A. Belalang', 'B. Burung Elang', 'C. Padi', 'D. Katak'],
-                'answer': 'D. Katak'
-            },
-            {
-                'type': 'image',
-                'question': 'Perhatikan pengelompokkan hewan berikut!',
-                'image': 'https://64.media.tumblr.com/70d489cc8c8ae75916bb8655543403e4/55ab4aa3bc060fdb-75/s500x750/6c6f08191a897f87c2c6da8c594682f206946a17.pnj',
-                'options': ['A. 1 dan 2', 'B. 2 dan 3', 'C. 3 dan 4', 'D. 1 dan 4'],
-                'answer': 'B. 2 dan 3'
-            },
-            {
-                'type': 'text',
-                'question': 'Makhluk hidup yang dapat memproduksi makanannya sendiri disebut ....',
-                'options': ['A. Produsen', 'B. Konsumen tingkat 1', 'C. Konsumen tingkat 2', 'D. Dekomposer'],
-                'answer': 'A. Produsen'
-            },
-            {
-                'type': 'image',
-                'question': 'Makhluk hidup yang tepat untuk mengisi rantai makanan di bawah ini adalah ....',
-                'image': 'https://64.media.tumblr.com/458d758d25002bc1baf1ae80e3ae654d/79734ff208408ba5-76/s1280x1920/e73e0db641d4822167dab32674a6d6a6d817fda3.pnj',
-                'options': ['A. Ikan teri', 'B. Ikan besar', 'C. Singa laut', 'D. Paus orca'],
-                'answer': 'B. Ikan besar'
-            },
-            {
-                'type': 'image',
-                'question': 'Perhatikan rantai makan berikut!',
-                'image': 'https://64.media.tumblr.com/998a7a135c261c4ecb92421cbcf23c63/b3a346b4769bc241-58/s500x750/9c87d79ee567b664af11c5dcff1ddb084a9c6935.pnj',
-                'options': ['A. Kupu-kupu merupakan puncak rantai makanan', 'B. Ular berperan sebagai pengurai', 'C. Katak mendapat energi dari ular', 'D. Bunga dapat berfotosintesis'],
-                'answer': 'D. Bunga dapat berfotosintesis'
-            },
-            {
-                'type': 'text',
-                'question': 'Makhluk hidup yang bertugas menguraikan senyawa organik (bangkai, daun busuk, dan sebagainya) menjadi nutrisi yang tersimpan dalam tanah disebut ....',
-                'options': ['A. Predator', 'B. Produsen', 'C. Dekomposer', 'D. Konsumen'],
-                'answer': 'C. Dekomposer'
-            },
-            {
-                'type': 'image',
-                'question': 'Pernyataan berikut yang benar terkait jaring-jaring makanan berikut adalah ....',
-                'image': 'https://64.media.tumblr.com/bccc843de5e622477a542bf68b6ed9c5/fb5377e50b8afd60-e3/s1280x1920/8a06b0c26599a059da36d842d32b256622478cf9.jpg',
-                'options': ['A. Serigala mendapatkan energi dari tikus', 'B. Rumput mendapatkan energi dari kelinci', 'C. Burung hantu mendapatkan energi dari elang', 'D. Ular mendapatkan energi dari elang'],
-                'answer': 'A. Serigala mendapatkan energi dari tikus'
-            },
-            {
-                'type': 'text',
-                'question': 'Pada ekosistem laut yang berperan sebagai produsen adalah ....',
-                'options': ['A. Fitoplankton', 'B. Padi', 'C. Cacing', 'D. Ikan kecil'],
-                'answer': 'A. Fitoplankton'
-            },
-            {
-                'type': 'text',
-                'question': 'Budi melakukan percobaan dengan memasukkan sampah organik ke dalam tanah. Budi membuat dua lubang di dalam tanah. Sampah pada lubang pertama langsung dimasukkan kedalam lubang, sedangkan sampah pada lubang kedua dibungkus plastik terlebih dahulu baru dikubur dalam tanah. Setelah beberapa minggu, kedua lubang dibuka. Sampah yang dikubur menggunakan plastik masih utuh, dan sampah yang tidak dibungkus plastik sudah menyatu dengan tanah. Percobaan yang dilakukan Budi membuktikan bahwa ....',
-                'options': ['A. Terdapat produsen dalam tanah', 'B. Terdapat predator dalam tanah', 'C. Terdapat dekomposer dalam tanah', 'D. Terdapat konsumen dalam tanah'],
-                'answer': 'C. Terdapat dekomposer dalam tanah'
-            },
-        ]
-        return questions
-
-    def display_question(question):
-        if question['type'] == 'text':
-            st.write('**Pertanyaan:**', question['question'])
-            selected_option = st.radio('Pilih jawaban Anda:', question['options'])
-        elif question['type'] == 'image':
-            st.write('**Pertanyaan:**', question['question'])
-            st.image(question['image'], use_column_width=True)
-            selected_option = st.radio('Pilih jawaban Anda:', question['options'])
-        else:
-            pass
-        return selected_option
 
     def main():
-        st.title('Kuis Topik A- Makan dan Dimakan')
-        st.write('Jawablah pertanyaan berikut dengan menekan bulatan pada opsi jawaban yg menurut kamu benar!')
-        
-        questions = generate_questions()
-        num_questions = len(questions)
-        current_question = 0
-        score = 0
+        st.title("Kuis Topik A")
 
-        if 'current_question' in st.session_state:
-            current_question = st.session_state.current_question
-        if 'score' in st.session_state:
-            score = st.session_state.score
+        google_form_url = "https://docs.google.com/forms/d/e/1FAIpQLSf6bP7x6QUqE2ZZhx7eah3HnMMg2oIgte0GWfB_q-dCRDk3_Q/viewform?usp=sf_link"
+        st.markdown(f"<a href='{google_form_url}' target='_blank'>Klik di sini untuk mengisi Kuis Topik A</a>", unsafe_allow_html=True)
 
-        if current_question < num_questions:
-            selected_option = display_question(questions[current_question])
-            st.write('---')
-            if st.button('Next', key='next_button', help='Jawaban Anda akan dikunci saat tombol Next ditekan'):
-                if selected_option == questions[current_question]['answer']:
-                    score += 1
-                current_question += 1
-        else:
-            st.write('Anda telah menjawab semua pertanyaan.')
-            st.write('Skor akhir Anda:', score, '/', num_questions)
-
-        st.session_state.current_question = current_question
-        st.session_state.score = score
-
-    if __name__ == '__main__':
-        main()
+if __name__ == "__main__":
+    main()
 
 
 #Ganti Page Berdampingan
