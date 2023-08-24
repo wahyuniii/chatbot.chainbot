@@ -94,15 +94,10 @@ with tab1:
         
 #Kuis
 with tab2:
-
-    def main():
-        st.title("Kuis Topik A")
-
-        google_form_url = "https://docs.google.com/forms/d/e/1FAIpQLSf6bP7x6QUqE2ZZhx7eah3HnMMg2oIgte0GWfB_q-dCRDk3_Q/viewform?usp=sf_link"
-        st.markdown(f"<a href='{google_form_url}' target='_blank'>Klik di sini untuk mengisi Kuis Topik A</a>", unsafe_allow_html=True)
-
-if __name__ == "__main__":
-    main()
+    st.header("Kuis Topik A")
+    st.write("Untuk mengukur pemahaman kamu mengenai materi Topik A (Memakan dan Dimakan). Kerjakanlah kuis berikut dengan semangat!")
+    st.write("---")
+    st.subheader("[<< Klik disini untuk mengerjakan kuis >>](https://docs.google.com/forms/d/e/1FAIpQLSf6bP7x6QUqE2ZZhx7eah3HnMMg2oIgte0GWfB_q-dCRDk3_Q/viewform?usp=sf_link)")
 
 
 #Ganti Page Berdampingan
